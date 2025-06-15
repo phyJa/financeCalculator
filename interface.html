@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./calc.js"></script>
+</head>
+<body>
+    
+        <input type="number" placeholder="Initial amount (Principal sum)" id="principalSum" />
+        <input type="number" placeholder="Periodic value" id="periodicValue" />
+        <input type="text" placeholder="Tax" id="tax" />
+        <input type="number" placeholder="Time" id="time" />
+        <label for="Last Value">Consider last value deposited?</label>
+        <select name="Last Value" id="lastValue">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+        <button onclick="test()"> Click me!!!! </button>
+        <p id="answer"></p>
+</body>
+</html>
