@@ -8,17 +8,49 @@
     <script src="./calc.js"></script>
 </head>
 <body>
-    
-        <input type="number" placeholder="Initial amount (Principal sum)" id="principalSum" />
-        <input type="number" placeholder="Periodic value" id="periodicValue" />
-        <input type="text" placeholder="Tax" id="tax" />
-        <input type="number" placeholder="Time" id="time" />
-        <label for="Last Value">Consider last value deposited?</label>
-        <select name="Last Value" id="lastValue">
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-        </select>
-        <button onclick="test()"> Click me!!!! </button>
-        <p id="answer"></p>
+
+    <div id="formForCompoundAmount">
+
+        <div id="formContainer">
+            <div id="principalSumContainer">
+                <label for="Principal Sum">Principal Sum: </label>
+                <input type="number" name="Principal Sum" id="principalSum" />
+            </div>
+            
+            <div id="periodicValueContainer">
+                <label for="Periodic value">Periodic value: </label>
+                <input type="number" name="Periodic value" id="periodicValue" />
+            </div>
+            
+        
+            <div id="taxContainer">
+                <label for="Tax">Tax: </label>
+                <input type="number" name="Tax" id="tax" />
+            </div>
+            
+            
+            <div id="timeContainer">
+                <label for="Time">Time:</label>
+                <input type="number" name="Time" id="time" />
+            </div>
+            
+            
+            <div id="lastValueContainer">
+                <label for="Last Value">Consider last value deposited?</label>
+                <select name="Last Value" id="lastValue">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div id="buttonContainer">
+                <button onclick="test()"> Calculate! </button>
+            </div>
+        </div>
+        
+         <p id="answer"></p>
+        
+    </div>
+        
 </body>
 </html>

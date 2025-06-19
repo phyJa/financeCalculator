@@ -83,6 +83,6 @@ function test () {
     const time = document.getElementById("time").value
     const lastValue = document.getElementById("lastValue").value
     const answer = document.getElementById("answer")
-    answer.innerHTML = `Your value is: ` + calcOnTime(principalSum, periodicValue, tax, time, lastValue)
+    answer.innerHTML = `Your value is: ` + calcOnTime(principalSum, periodicValue, tax, time, lastValue).toFixed(2)
 }
 
