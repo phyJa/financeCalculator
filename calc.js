@@ -133,7 +133,6 @@ function calcOnTime(
                 tax, 
                 timeConverter(i, timeUnitForPeriodicValue, timeUnitForTax)
             )
-            console.log(`${i} ${timeUnitForPeriodicValue} to calculate. Considered time: ${timeConverter(i, timeUnitForPeriodicValue, timeUnitForTax)}. Value until here: ${finalValue}`)
         }
         
     if(considerLastValue === "yes") 
@@ -186,4 +185,5 @@ console.log(
 )
 
 
-
+// For testing
+export {timeConverter, calcOnTime}
