@@ -49,8 +49,65 @@ test(`Fourth test:
 })
 
 
+test(`Fifth test:
+    - initial sum of 100 units
+    - periodic value of 5 units per day
+    - anual tax of 15%
+    - 2 days of time
+    - not considering the last deposit`, () => {
+    expect(calcOnTime(100, 5, "days", 15, "years", 2, "days", "no").toFixed(2)).toBe("105.08")
+})
 
-test(`following conditions:
+
+test(`Sixth test:
+    - initial sum of 100 units
+    - periodic value of 5 units per day
+    - anual tax of 15%
+    - 2 days of time
+    - considering the last deposit`, () => {
+    expect(calcOnTime(100, 5, "days", 15, "years", 2, "days", "yes").toFixed(2)).toBe("110.08")
+})
+
+test(`Seventh test:
+    - initial sum of 100 units
+    - periodic value of 5 units per day
+    - anual tax of 15%
+    - 3 days of time
+    - not considering the last deposit`, () => {
+    expect(calcOnTime(100, 5, "days", 15, "years", 3, "days", "no").toFixed(2)).toBe("110.12")
+})
+
+
+test(`Eighth test:
+    - initial sum of 100 units
+    - periodic value of 0 units
+    - month tax of 8%
+    - 1 year of time
+    - not considering the last deposit`, () => {
+    expect(calcOnTime(100, 0, "days", 8, "months", 1, "years", "no").toFixed(2)).toBe("251.82")
+})
+
+
+test(`Ninth test:
+    - initial sum of 100 units
+    - periodic value of 0 units
+    - month tax of 8%
+    - 1 year of time
+    - considering the last deposit`, () => {
+    expect(calcOnTime(100, 0, "days", 8, "months", 1, "years", "yes").toFixed(2)).toBe("251.82")
+})
+
+
+test(`Tenth test:
+    - initial sum of 20000 units
+    - periodic value of 20000 units
+    - anual tax of 10%
+    - 3 year of time
+    - considering the last deposit`, () => {
+    expect(calcOnTime(20000, 20000, "years", 10, "years", 3, "years", "yes").toFixed(2)).toBe("92820.00")
+})
+
+test(`Eleventh test:
     - initial sum of 100 units
     - periodic value of 4 units per day
     - anual tax of 12%
