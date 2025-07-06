@@ -16,6 +16,16 @@ function timeConverter(value, valueUnit, newUnit) {
         return value * 12
 }
 
+
+function numberIsInteger(num) {
+    if(num % 1 === 0)
+        return true
+    else
+        return false
+}
+
+
+
 function calcOnTime(
     initialAmount, 
     periodicValue, 
@@ -32,6 +42,9 @@ function calcOnTime(
         initialAmount, 
         tax, 
         timeConverter(time, timeUnitForTime, timeUnitForTax))
+
+    let counter = 0
+    let isInteger
     
     for (
             let i = timeConverter(time, timeUnitForTime, timeUnitForPeriodicValue) - 1;
@@ -39,6 +52,8 @@ function calcOnTime(
             i--
         ) 
         {
+            isInteger = numberIsInteger(i)
+            counter++
             finalValue += calculateCompoundAmount(
                 periodicValue, 
                 tax, 
@@ -46,9 +61,9 @@ function calcOnTime(
             )
         }
         
-    if(considerLastValue === "yes") 
+    if(considerLastValue === "yes" || counter === 0 || !isInteger) 
         return finalValue
-     else
+    else
         return finalValue - periodicValue
 
 }
@@ -85,4 +100,4 @@ function main() {
 
 
 // Uncomment only when testing the pure functions (bun)
-// export {timeConverter, calcOnTime}
+export {timeConverter, calcOnTime}
