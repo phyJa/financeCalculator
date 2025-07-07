@@ -100,4 +100,4 @@ function main() {
 
 
 // Uncomment only when testing the pure functions (bun)
-export {timeConverter, calcOnTime}
+// export {timeConverter, calcOnTime}
