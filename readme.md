@@ -41,6 +41,10 @@ Este arquivo contém os testes automatizados que são executados pelo interpreta
 
 bun test ./tests.js
 
-O interpretador então testará as funções do sistema no terminal.
+Então, o interpretador testará as funções do sistema no terminal.
 
 # Para o(a) usuário(a)
+
+# Para ambos
+
+## Compreendendo o cálculo
