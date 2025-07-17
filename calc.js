@@ -68,36 +68,191 @@ function calcOnTime(
 
 }
 
-function main() {
     // Grabbing elements
-    const principalSum = document.getElementById("principalSum").value
+    const principalSum = document.getElementById("principalSum")
     // Periodic value and its time unit
-    const periodicValue = document.getElementById("periodicValue").value
-    const timeUnitForPeriodicValue = document.getElementById("timeUnitForPeriodicValue").value
+    const periodicValue = document.getElementById("periodicValue")
+    const timeUnitForPeriodicValue = document.getElementById("timeUnitForPeriodicValue")
     // Tax and its time unit
-    const tax = document.getElementById("tax").value
-    const timeUnitForTax = document.getElementById("timeUnitForTax").value
+    const tax = document.getElementById("tax")
+    const timeUnitForTax = document.getElementById("timeUnitForTax")
     // Time and its time unit
-    const time = document.getElementById("time").value
-    const timeUnitForTime = document.getElementById("timeUnitForTime").value
+    const time = document.getElementById("time")
+    const timeUnitForTime = document.getElementById("timeUnitForTime")
     // Last value
-    const lastValue = document.getElementById("lastValue").value
+    const lastValue = document.getElementById("lastValue")
     // Answer container
     const answerParagraph = document.getElementById("answer")
-    // Calculate answer and display it
-    const answer = calcOnTime(
-        principalSum, 
-        periodicValue, 
-        timeUnitForPeriodicValue, 
-        tax,
-        timeUnitForTax,
-        time,
-        timeUnitForTime,
-        lastValue
-    )
-    answerParagraph.innerHTML = answer.toFixed(2)
-}
 
+
+    // Values
+    let values = {
+        principalSumValue: principalSum.value,
+        periodicValue: periodicValue.value,
+        timeUnitForPeriodicValue: timeUnitForPeriodicValue.value,
+        taxValue: tax.value,
+        timeUnitForTaxValue: timeUnitForTax.value,
+        timeValue: time.value,
+        timeUnitForTimeValue: timeUnitForTime.value,
+        lastValueValue: lastValue.value
+    }
+    
+    // Event listeners
+    // Principal sum
+    principalSum.addEventListener(
+        "input", (event) => {
+            values.principalSumValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Periodic value
+     */
+
+    periodicValue.addEventListener(
+        "input", (event) => {
+            values.periodicValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Time unit for periodic value
+     */
+    timeUnitForPeriodicValue.addEventListener(
+        "input", (event) => {
+            values.timeUnitForPeriodicValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Tax value
+     */
+    
+    tax.addEventListener(
+        "input", (event) => {
+            values.taxValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Time unit for tax value
+     */
+
+    timeUnitForTax.addEventListener(
+        "input", (event) => {
+            values.timeUnitForTaxValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Time value
+     */
+
+    time.addEventListener(
+        "input", (event) => {
+            values.timeValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Time unit for time value
+     */
+
+    timeUnitForTime.addEventListener(
+        "input", (event) => {
+            values.timeUnitForTimeValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
+
+    /**
+     * Time unit for time value
+     */
+
+    lastValue.addEventListener(
+        "input", (event) => {
+            values.lastValueValue = event.target.value
+            answerParagraph.innerHTML = calcOnTime(
+                values.principalSumValue,
+                values.periodicValue,
+                values.timeUnitForPeriodicValue,
+                values.taxValue,
+                values.timeUnitForTaxValue,
+                values.timeValue,
+                values.timeUnitForTimeValue,
+                values.lastValueValue
+            )
+        }
+    )
 
 // Uncomment only when testing the pure functions (bun)
 // export {timeConverter, calcOnTime}
