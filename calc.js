@@ -85,174 +85,65 @@ function calcOnTime(
     const answerParagraph = document.getElementById("answer")
 
 
+    let elements = [
+        principalSum,
+        periodicValue,
+        timeUnitForPeriodicValue,
+        tax,
+        timeUnitForTax,
+        time,
+        timeUnitForTime,
+        lastValue
+    ]
+
+    let elementsNames = [
+        "principalSum",
+        "periodicValue",
+        "timeUnitForPeriodicValue",
+        "tax",
+        "timeUnitForTax",
+        "time",
+        "timeUnitForTime",
+        "lastValue"
+    ]
+
     // Values
     let values = {
         principalSumValue: principalSum.value,
         periodicValue: periodicValue.value,
-        timeUnitForPeriodicValue: timeUnitForPeriodicValue.value,
+        timeUnitForPeriodicValueValue: timeUnitForPeriodicValue.value,
         taxValue: tax.value,
         timeUnitForTaxValue: timeUnitForTax.value,
         timeValue: time.value,
         timeUnitForTimeValue: timeUnitForTime.value,
         lastValueValue: lastValue.value
     }
+
+
+
+    for (let i = 0; i < elements.length; i++) {
+
+        elements[i].addEventListener(
+            
+            "input", (event) => {
+
+                values[`${elementsNames[i]}Value`] = event.target.value
+
+                answerParagraph.innerHTML = calcOnTime(
+                    values.principalSumValue,
+                    values.periodicValue,
+                    values.timeUnitForPeriodicValueValue,
+                    values.taxValue,
+                    values.timeUnitForTaxValue,
+                    values.timeValue,
+                    values.timeUnitForTimeValue,
+                    values.lastValueValue
+                ) 
+            }
+        )
+    }
+
     
-    // Event listeners
-    // Principal sum
-    principalSum.addEventListener(
-        "input", (event) => {
-            values.principalSumValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Periodic value
-     */
-
-    periodicValue.addEventListener(
-        "input", (event) => {
-            values.periodicValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Time unit for periodic value
-     */
-    timeUnitForPeriodicValue.addEventListener(
-        "input", (event) => {
-            values.timeUnitForPeriodicValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Tax value
-     */
-    
-    tax.addEventListener(
-        "input", (event) => {
-            values.taxValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Time unit for tax value
-     */
-
-    timeUnitForTax.addEventListener(
-        "input", (event) => {
-            values.timeUnitForTaxValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Time value
-     */
-
-    time.addEventListener(
-        "input", (event) => {
-            values.timeValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Time unit for time value
-     */
-
-    timeUnitForTime.addEventListener(
-        "input", (event) => {
-            values.timeUnitForTimeValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
-
-    /**
-     * Time unit for time value
-     */
-
-    lastValue.addEventListener(
-        "input", (event) => {
-            values.lastValueValue = event.target.value
-            answerParagraph.innerHTML = calcOnTime(
-                values.principalSumValue,
-                values.periodicValue,
-                values.timeUnitForPeriodicValue,
-                values.taxValue,
-                values.timeUnitForTaxValue,
-                values.timeValue,
-                values.timeUnitForTimeValue,
-                values.lastValueValue
-            )
-        }
-    )
 
 // Uncomment only when testing the pure functions (bun)
 // export {timeConverter, calcOnTime}
