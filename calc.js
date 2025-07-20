@@ -68,80 +68,69 @@ function calcOnTime(
 
 }
 
-    // Grabbing elements
-    const principalSum = document.getElementById("principalSum")
-    // Periodic value and its time unit
-    const periodicValue = document.getElementById("periodicValue")
-    const timeUnitForPeriodicValue = document.getElementById("timeUnitForPeriodicValue")
-    // Tax and its time unit
-    const tax = document.getElementById("tax")
-    const timeUnitForTax = document.getElementById("timeUnitForTax")
-    // Time and its time unit
-    const time = document.getElementById("time")
-    const timeUnitForTime = document.getElementById("timeUnitForTime")
-    // Last value
-    const lastValue = document.getElementById("lastValue")
-    // Answer container
-    const answerParagraph = document.getElementById("answer")
 
+const answerParagraph = document.getElementById("answer")
 
-    let elements = [
-        principalSum,
-        periodicValue,
-        timeUnitForPeriodicValue,
-        tax,
-        timeUnitForTax,
-        time,
-        timeUnitForTime,
-        lastValue
-    ]
-
-    let elementsNames = [
-        "principalSum",
-        "periodicValue",
-        "timeUnitForPeriodicValue",
-        "tax",
-        "timeUnitForTax",
-        "time",
-        "timeUnitForTime",
-        "lastValue"
-    ]
-
-    // Values
-    let values = {
-        principalSumValue: principalSum.value,
-        periodicValue: periodicValue.value,
-        timeUnitForPeriodicValueValue: timeUnitForPeriodicValue.value,
-        taxValue: tax.value,
-        timeUnitForTaxValue: timeUnitForTax.value,
-        timeValue: time.value,
-        timeUnitForTimeValue: timeUnitForTime.value,
-        lastValueValue: lastValue.value
+let elements = [
+    {
+        name: "principalSum",
+        element: document.getElementById("principalSum"),
+        value: document.getElementById("principalSum").value
+    },
+    {
+        name: "periodicValue",
+        element: document.getElementById("periodicValue"),
+        value: document.getElementById("periodicValue").value
+    },
+    {
+        name: "timeUnitForPeriodicValue",
+        element: document.getElementById("timeUnitForPeriodicValue"),
+        value: document.getElementById("timeUnitForPeriodicValue").value
+    },
+    {
+        name: "tax",
+        element: document.getElementById("tax"),
+        value: document.getElementById("tax").value
+    },
+    {
+        name: "timeUnitForTax",
+        element: document.getElementById("timeUnitForTax"),
+        value: document.getElementById("timeUnitForTax").value
+    },
+    {
+        name: "time",
+        element: document.getElementById("time"),
+        value: document.getElementById("time").value
+    },
+    {
+        name: "timeUnitForTime",
+        element: document.getElementById("timeUnitForTime"),
+        value: document.getElementById("timeUnitForTime").value
+    },
+    {
+        name: "lastValue",
+        element: document.getElementById("lastValue"),
+        value: document.getElementById("lastValue").value
     }
+]
 
 
+for (let i = 0; i < elements.length; i++) {
 
-    for (let i = 0; i < elements.length; i++) {
+    elements[i].element.addEventListener(
+        
+        "input", (event) => {
 
-        elements[i].addEventListener(
-            
-            "input", (event) => {
+            elements[i].value = event.target.value
 
-                values[`${elementsNames[i]}Value`] = event.target.value
-
-                answerParagraph.innerHTML = calcOnTime(
-                    values.principalSumValue,
-                    values.periodicValue,
-                    values.timeUnitForPeriodicValueValue,
-                    values.taxValue,
-                    values.timeUnitForTaxValue,
-                    values.timeValue,
-                    values.timeUnitForTimeValue,
-                    values.lastValueValue
-                ) 
-            }
-        )
-    }
+            answerParagraph.innerHTML = calcOnTime(
+                ...elements.map(
+                    (element) => element.value
+                )
+            ) 
+        }
+    )
+}
 
     
 
