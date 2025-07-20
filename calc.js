@@ -127,7 +127,7 @@ for (let i = 0; i < elements.length; i++) {
                 ...elements.map(
                     (element) => element.value
                 )
-            ) 
+            ).toFixed(2) 
         }
     )
 }
