@@ -12,17 +12,17 @@
 
         <main>
             <div id="principalSumContainer">
-                <label for="Principal Sum"> Capital inicial: </label>
+                <label for="principalSum"> Capital inicial: </label>
                 <input type="number" value="0" name="Principal Sum" id="principalSum" class="test"/>
             </div>
             
             <div id="periodicValueContainer" class="sideBySideItems">
                 <div>
-                    <label for="Periodic value">Aporte: </label>
+                    <label for="periodicValue">Aporte: </label>
                     <input type="number" name="Periodic value" id="periodicValue" />
                 </div>
                 <div class="specification">
-                    <label for="Per time (Periodic value)">Frequência: </label>
+                    <label for="timeUnitForPeriodicValue">Frequência: </label>
                     <select name="Per time (Periodic Value)" id="timeUnitForPeriodicValue">
                         <option value="days"> Diária </option>
                         <option value="months"> Mensal </option>
@@ -34,11 +34,11 @@
         
             <div id="taxContainer" class="sideBySideItems">
                 <div>
-                    <label for="Tax">Taxa: </label>
+                    <label for="tax">Taxa (em %): </label>
                     <input type="number" name="Tax" id="tax" />
                 </div>
                 <div class="specification">
-                    <label for="Per time (tax)">Período da taxa: </label>
+                    <label for="timeUnitForTax">Período da taxa: </label>
                     <select name="Per time (Tax)" id="timeUnitForTax">
                     <option value="days"> Diária </option>
                     <option value="months"> Mensal </option>
@@ -50,11 +50,11 @@
             
             <div id="timeContainer" class="sideBySideItems">
                 <div>
-                    <label for="Time">Tempo investido:</label>
+                    <label for="time">Tempo investido:</label>
                     <input type="number" name="Time" id="time" />
                 </div>
                 <div class="specification">
-                    <label for="Per time (Time)">Unidade de tempo: </label>
+                    <label for="timeUnitForTime">Unidade de tempo: </label>
                     <select name="Per time (Time)" id="timeUnitForTime">
                         <option value="days"> Dia </option>
                         <option value="months"> Mês </option>
@@ -70,7 +70,7 @@
             <p id="answer"></p>
 
             <div id="lastValueContainer">
-                <label for="Last Value">Considerar depósito limite?</label>
+                <label for="lastValue">Considerar depósito limite?</label>
                 <select name="Last Value" id="lastValue">
                     <option value="no">Não</option>
                     <option value="yes">Sim</option>
