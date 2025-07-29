@@ -1,72 +1,79 @@
-
-
-#formForCompoundAmount {
+#appContainer {
     display: flex;
+}
+
+main {
     align-items: center;
     padding-left: 10%;
 }
 
-#formForCompoundAmount div {
-    margin: 2vh;
-    background-color: rgb(53, 254, 237);
-}
 
-#formForCompoundAmount div label, input {
-    display: block;
-}
-
-#lastValueContainer {
+.sideBySideItems {
     display: flex;
 }
 
-#lastValueContainer label {
-    margin-right: 1.6vw;
-    line-height: 100%;
+.sideBySideItems .specification {
+    margin-left: 5vw;
 }
 
-input {
+
+label, select, input {
     height: 2.5vw;
     border-radius: 3px;
     border: 0;
-    margin-bottom: 1.5vw;
-    font-size: 2vw;
-    text-align: center;
+    font-size: 1.5vw;
+    display: block;
 }
+
+select, input {
+    text-align: center;
+    height: 4vw;
+    margin-bottom: 2vw;
+    background-color: #d9d9d9;
+
+}
+
+input {
+    width: 20vw;
+}
+
+select {
+    width: 15vw;
+}
+
 
 input:focus {
     outline: none;
 }
 
-select {
-    height: 7vh;
-    width: 6vw;
-    border: none;
-}
 
 select:focus {
     outline: none;
 }
 
-label {
-    margin-bottom: 0.2vw;
-    font-size: 1.5vw;
+section #lastValueContainer {
+    text-align: center;
 }
 
-button {
+#lastValueContainer select {
+    display: inline;
+}
+
+#lastValueContainer label {
+    margin-top: 6vw;
+}
+
+section {
     width: 100%;
-    height: 7vh;
-    border-radius: 5px;
-    border: none;
-    font-size: 2vw;
-}
-
-button:hover {
-    background-color: rgb(4, 255, 4);
-    cursor: pointer;
+    text-align: center;
+    padding-top: 12vw;
 }
 
 #answer {
-    background-color: rgb(117, 131, 249);
     font-size: 3vw;
     border-radius: 0.5vw;
+    display: inline;
+    padding: 3vw;
+    color: white;
+    background-color: #504324;
 }
