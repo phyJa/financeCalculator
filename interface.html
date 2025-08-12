@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <h2> Calculadora de rendimentos </h2>
+
     <div id="appContainer">
 
         <main>
@@ -19,7 +21,7 @@
             <div id="periodicValueContainer" class="sideBySideItems">
                 <div>
                     <label for="periodicValue">Aporte: </label>
-                    <input type="number" name="Periodic value" id="periodicValue" />
+                    <input type="number" value="0" name="Periodic value" id="periodicValue" />
                 </div>
                 <div class="specification">
                     <label for="timeUnitForPeriodicValue">Frequência: </label>
@@ -35,7 +37,7 @@
             <div id="taxContainer" class="sideBySideItems">
                 <div>
                     <label for="tax">Taxa (em %): </label>
-                    <input type="number" name="Tax" id="tax" />
+                    <input type="number" value="0" name="Tax" id="tax" />
                 </div>
                 <div class="specification">
                     <label for="timeUnitForTax">Período da taxa: </label>
@@ -51,7 +53,7 @@
             <div id="timeContainer" class="sideBySideItems">
                 <div>
                     <label for="time">Tempo investido:</label>
-                    <input type="number" name="Time" id="time" />
+                    <input type="number" value="0" name="Time" id="time" />
                 </div>
                 <div class="specification">
                     <label for="timeUnitForTime">Unidade de tempo: </label>
@@ -67,7 +69,7 @@
         
         <section>
 
-            <p id="answer"></p>
+            <p id="answer">0.00</p>
 
             <div id="lastValueContainer">
                 <label for="lastValue">Considerar depósito limite?</label>
@@ -80,6 +82,34 @@
         </section>
     </div>    
     
+
+    <section id="resultDetails">
+
+        <h2 class="details">Detalhes do resultado</h2>
+
+        <div id="dataOrganizer">    
+            <div id="incomeData">
+                <ul>
+                    <li id="principalSumRecap" class="details">Valor do capital inicial: </li>
+                    <li id="principalSumIncome" class="details">Rendimento do capital inicial: </li>
+                    <li id="principalSumTotal" class="details">Total a partir do capital inicial: </li>
+                    <li id="periodicValueSum" class="details">Valor acumulado dos aportes: </li>
+                    <li id="periodicValueIncome" class="details">Rendimento dos aportes: </li>
+                    <li id="periodicValueTotal" class="details">Total a partir dos aportes: </li>
+                    <li id="total" class="details">Valor total: </li>
+                </ul>
+
+            </div>
+        
+            <div id="incomeAnswerContainer">
+                <p id="incomeAnswerTitle">Total de rendimentos (rendimentos dos aportes + os do capital inicial):</p>
+                <p id="incomeAnswer">0.00</p>
+            </div>
+        
+        </div>
+
+         
+    </section>
 
     <script src="./a.js"></script>
     <script src="./calc.js"></script>
