@@ -1,3 +1,20 @@
+* {
+    margin: 0;
+}
+
+:root {
+    --mainColor: #0080af;
+    --fieldColor: #B2D2D3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: var(--mainColor);
+    font-size: 3vw;
+    margin-top: 2vw;
+}
+
 #appContainer {
     display: flex;
 }
@@ -5,6 +22,7 @@
 main {
     align-items: center;
     padding-left: 10%;
+    color: var(--mainColor);
 }
 
 
@@ -29,7 +47,8 @@ select, input {
     text-align: center;
     height: 4vw;
     margin-bottom: 2vw;
-    background-color: #d9d9d9;
+    background-color: var(--fieldColor);
+    color: rgb(73, 60, 60);
 
 }
 
@@ -61,6 +80,7 @@ section #lastValueContainer {
 
 #lastValueContainer label {
     margin-top: 6vw;
+    color: var(--mainColor);
 }
 
 section {
@@ -75,5 +95,48 @@ section {
     display: inline;
     padding: 3vw;
     color: white;
-    background-color: #504324;
+    background-color: var(--mainColor);
 }
+
+#resultDetails {
+    background-color: var(--mainColor);
+}
+
+.details {
+    margin: 2vw;
+    color: white;
+}
+
+#resultDetails {
+    text-align: justify;
+    padding-top: 1vw;
+}
+
+#dataOrganizer {
+    display: flex;
+    text-align: justify;
+}
+
+#dataOrganizer div{
+    width: 50%;
+}
+
+#incomeAnswerContainer {
+    text-align: center;
+}
+
+#incomeAnswerTitle {
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+    color: white;
+}
+
+#incomeAnswer {
+    font-size: 3vw;
+    border-radius: 0.5vw;
+    display: inline;
+    padding: 3vw;
+    color: var(--mainColor);
+    background-color: white;
+}
+
